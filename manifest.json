@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "tabPureHome",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "自定义浏览器的新标签页网址。",
   "permissions": [
     "storage",
