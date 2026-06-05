@@ -1,0 +1,9 @@
+
+.app-popup{
+    display: block !important;
+    width: 320px;
+    height: 500px;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

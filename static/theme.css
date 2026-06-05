@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: "Noto Sans Light", sans-serif;
+}
+
+/*  */
+
+.hide{
+    display: none;
+}
+.clear{
+    clear: both;
+}
+img{
+    width: 30px;
+}
+
+.clear{
+    clear: both;
+}
+.float-left{
+    float: left;
+}
+.float-right{
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.break {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.break-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+::selection {
+    color: #FCFCFC;
+    background: #FF8C00;
+    /*outline: thick solid #FF0000;*/
+}
+::-moz-selection {
+    color: #FCFCFC;
+    background: #FF8C00;
+}
+
+.click-none {
+    cursor: not-allowed;
+    user-select: none;
+}
+
+.click {
+    cursor: pointer;
+    user-select: none;
+    opacity: 1;
+    /*移除btn原生点击高亮效果*/
+    -webkit-tap-highlight-color: transparent;
+}
+.click:hover{
+    opacity: 0.9;
+}
+.click:active {
+    opacity: 0.8;
+    transform: scale(1.04);
+    transition: transform 0.1s linear;
+}
+
+.not-click{
+    cursor: not-allowed;
+}
+
+.hover:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.select-none {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.select-all {
+    -moz-user-select: all;
+    -webkit-user-select: all;
+    -ms-user-select: all;
+    user-select: all;
+}
+
+.select-text {
+    -moz-user-select: text;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+
+.font-mini {
+    font-size: 12px;
+    line-height: 16px; /*1.3倍的字体大小*/
+    letter-spacing: 0;
+}
+.font-text {
+    font-size: 15px;
+    line-height: 22px; /*1.5倍的字体大小*/
+}
+.font-title {
+    font-size: 18px;
+}
+.font-class {
+    font-size: 24px;
+}
+
+/*  */
+
+.app{
+    display: contents;
+}
+
+/* 亮主题·默认主题 */
+.body{
+    background: #fefefe;
+    color: #191A1C;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+/* 暗组题 */
+@media (prefers-color-scheme: dark) {
+    .body{
+        background: #191A1C;
+        color: #fefefe;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+
+}
