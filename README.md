@@ -30,6 +30,10 @@ tabtabPureHome
 └───static 其他静态文件（图标、图片、json等）
 ~~~
 
+如图效果：
+
+![ext-show](./static/ext-show.png)
+
 ---
 
 ### 手动导入扩展：
@@ -37,6 +41,8 @@ tabtabPureHome
 - 在浏览器打开网址 edge://extensions/ 或 chrome://extensions/ ；
 - 打开“开发人员模式”；
 - 点击“加载解压缩的扩展”，选择项目主文件夹即可导入。
+
+如图步骤：
 
 ![导入本地扩展](./static/导入本地扩展.png)
 
