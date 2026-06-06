@@ -1,9 +1,59 @@
 
+
 .app-popup{
     display: block !important;
     width: 320px;
-    height: 500px;
+    min-height: 300px;
+    max-height: 500px;
     border-radius: 5px;
     overflow-y: auto;
     overflow-x: hidden;
+    padding: 0 0 10px 0;
+}
+
+
+.settings-item-title{
+    padding: 0 10px;
+    margin: 30px 0;
+}
+.settings-item{
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+.settings-item-footer{
+    padding: 0 10px;
+    margin-top: 60px;
+}
+
+
+.input-style{
+    outline: none;
+    height: 40px;
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid lightskyblue;
+    letter-spacing: 1px;
+}
+.input-style:focus{
+    border: 1px solid rgba(43,127,255, 1);
+}
+.btn-style{
+    height: 40px;
+    width: 100%;
+    background-color: rgba(43,127,255, 1);
+    color: #FCFCFC;
+    text-align: center;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+}
+.input-alert{
+    line-height: 16px !important;
+    padding: 5px 5px;
+}
+.settings-item-footer-version{
+    padding-left: 5px;
+}
+.settings-item-footer-a{
+    text-decoration: none;
 }

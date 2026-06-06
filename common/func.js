@@ -1,43 +1,55 @@
 // 公共函数
 const func = {
-    get_data: function(key="") { // 读取数据
+    get_data:function(key="") { // 读取数据
         key = config.app_class + key;
-        if (typeof chrome !== 'undefined'){
-            chrome.storage.local.get([key], (res) => {
-               return res[key] || "";
-            });
-        }else{
-            return "";
-        }
+        return new Promise((resolve)=>{
+            if (typeof chrome !== 'undefined'){
+                chrome.storage.local.get([key], (res) => {
+                    if (res[key] !== undefined) {
+                        resolve(res[key]);
+                    } else {
+                        resolve("");
+                    }
+                });
+            }else{
+                resolve("");
+            }
+        });
     },
-    set_data: function(key="", value=null) { // 保存数据
+    set_data:function(key="", value=null) { // 保存数据
         key = config.app_class + key;
-        if (typeof chrome !== 'undefined'){
-            chrome.storage.local.set({ [key]: value }, () => {
-                return value;
-            });
-        }else{
-            return "";
-        }
+        return new Promise((resolve)=>{
+            if (typeof chrome !== 'undefined'){
+                chrome.storage.local.set({ [key]: value }, () => {
+                    resolve(value);
+                });
+            }else{
+                resolve("");
+            }
+        });
     },
     del_data: function(key="") { // 删除数据
         key = config.app_class + key;
-        if (typeof chrome !== 'undefined'){
-            chrome.storage.local.remove([key], () => {
-                return true;
-            });
-        }else{
-            return false;
-        }
+        return new Promise((resolve)=>{
+            if (typeof chrome !== 'undefined'){
+                chrome.storage.local.remove([key], () => {
+                    resolve(true);
+                });
+            }else{
+                resolve(false);
+            }
+        });
     },
     clear_data: function() { // 清空数据
-        if (typeof chrome !== 'undefined'){
-            chrome.storage.local.clear(() => {
-                return true;
-            });
-        }else{
-            return false;
-        }
+        return new Promise((resolve)=>{
+            if (typeof chrome !== 'undefined'){
+                chrome.storage.local.clear(() => {
+                    resolve(true);
+                });
+            }else{
+                resolve(false);
+            }
+        });
     },
     is_url: function (string=""){ // http(s) ftp(s) file
         string = string.toLowerCase();
@@ -211,4 +223,80 @@ const func = {
             }
         }
     },
+    string_to_unicode: function(string) {
+        let that = this;
+        // 处理非字符串输入
+        if (typeof string !== 'string') {
+            string = String(string);
+        }
+        if (string.length === 0) return "";
+
+        // 使用数组收集编码，然后join，效率更高
+        let codes = [""]; // 默认一个空值可以避免多次转换丢失一个值
+        for (let i = 0; i < string.length; i++) {
+            codes.push(string.charCodeAt(i));
+        }
+        return codes.join(',');
+    },
+    unicode_to_string: function(unicode) {
+        let that = this;
+        // 处理无效输入
+        if (unicode === null || unicode === undefined) {
+            return "";
+        }
+
+        // 如果是数字，直接转换
+        if (typeof unicode === 'number') {
+            return String.fromCharCode(unicode);
+        }
+
+        // 确保是字符串
+        unicode = String(unicode).trim();
+        if (unicode === "") return "";
+
+        try {
+            // 处理逗号分隔的Unicode序列
+            if (unicode.indexOf(',') !== -1) {
+                let parts = unicode.split(',');
+                let result = [];
+
+                for (let i = 0; i < parts.length; i++) {
+                    let part = parts[i].trim();
+                    // 跳过空部分
+                    if (part === "") continue;
+
+                    // 转换为数字
+                    let code = Number(part);
+                    // 验证是否为有效Unicode码点
+                    if (isNaN(code) || code < 0 || code > 0x10FFFF) {
+                        // 无效编码，返回原字符串
+                        return unicode;
+                    }
+                    result.push(String.fromCharCode(code));
+                }
+
+                return result.join('');
+            } else {
+                // 处理单个Unicode码点
+                let code = Number(unicode);
+                let _unicode = "";
+                // 验证是否为有效Unicode码点
+                if (!isNaN(code) && code >= 0 && code <= 0x10FFFF) {
+                    _unicode = String.fromCharCode(code);
+                }else{
+                    _unicode = unicode;
+                }
+                // 比较值
+                if (that.string_to_unicode(unicode) === unicode){
+                    return _unicode;
+                }else{
+                    return unicode;
+                }
+            }
+        } catch (e) {
+            // 任何错误都返回原字符串
+            return unicode;
+        }
+    },
+
 };

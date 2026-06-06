@@ -5,17 +5,14 @@
   "description": "自定义浏览器的新标签页网址。",
   "permissions": [
     "storage",
-    "tabs"
+    "activeTab"
   ],
-  "background": {
-    "service_worker": "./common/worker.js"
-  },
   "chrome_url_overrides": {
     "newtab": "./pages/index/index.html"
   },
   "action": {
     "default_popup": "./pages/popup/popup.html",
-    "default_title": "Settings"
+    "default_title": "tabPureHome"
   },
   "icons": {
     "128": "./static/appicon.png"

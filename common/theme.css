@@ -120,6 +120,31 @@ img{
 .font-class {
     font-size: 24px;
 }
+.font-white{
+    color: white;
+}
+.font-black{
+    color: black;
+}
+.font-gray{
+    color: rgba(160,160,160, 1);
+}
+.font-blue{
+    color: rgba(43,127,255, 1);
+}
+.font-orange{
+    color:rgba(255,137,4, 1);
+}
+.font-red{
+    color: rgba(231,0,11, 1);
+}
+.font-green{
+    color: rgba(0,166,62, 1);
+}
+
+.border-radius{
+    border-radius: 10px;
+}
 
 /*  */
 
@@ -129,9 +154,13 @@ img{
 
 /* 亮主题·默认主题 */
 .body{
-    background: #fefefe;
+    background: #eeeeee;
     color: #191A1C;
     transition: background-color 0.2s ease, color 0.2s ease;
+}
+.input-style{
+    background: #eeeeee;
+    color: #191A1C;
 }
 
 
@@ -142,6 +171,9 @@ img{
         color: #fefefe;
         transition: background-color 0.2s ease, color 0.2s ease;
     }
-
+    .input-style{
+        background: #191A1C;
+        color: #fefefe;
+    }
 
 }

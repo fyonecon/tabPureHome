@@ -1,15 +1,15 @@
 
 //
 function task_new_tab(){
-    let href = func.get_data("new_tab_href");
-    //
-    if (!href){href = config.default_new_tab_href;}
-    //
-    if (func.is_url(href)){
-        func.goto_href(href, "_replace");
-    }else{
-        document.getElementsByClassName("index-msg")[0].innerHTML = "Error Href: " + href;
-    }
+    func.get_data("custom_new_tab_href").then(href => {
+        if (!href){href = config.default_new_tab_href;}else{href = func.unicode_to_string(href);}
+        //
+        if (func.is_url(href)){
+            func.goto_href(href, "_replace");
+        }else{
+            document.getElementsByClassName("index-msg")[0].innerHTML = "Error Href: " + href;
+        }
+    });
 }
 
 // 页面起始函数

@@ -3,24 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-    <title>设置</title>
+    <title></title>
     <script src="../../common/config.js"></script>
     <script src="../../common/language.js"></script>
     <script src="../../common/func.js"></script>
-    <link rel="stylesheet" href="../../static/theme.css">
-    <link rel="stylesheet" href="./popup.css">
+    <link rel="stylesheet" href="../../common/theme.css">
 </head>
 <body class="body font-text select-none">
+    <!--页面内容-->
     <div class="app app-popup">
-        <div>
-            <label>
-                <input class="language-input" id="input-custom_new_tab_href" type="text" data-language_key="input_placeholder_custom_new_tab_href" placeholder="" maxlength="1200" />
-            </label>
+        <div class="settings-item-title center">
+            <span class="language-span font-text" data-language_key="input_placeholder_custom_new_tab_href"></span>
         </div>
-        <div>
-            <button><span class="language-span" data-language_key="custom_new_tab_btn"></span></button>
+        <div class="settings-item">
+            <label>
+                <input class="input-style border-radius select-text font-text language-input" id="input-custom_new_tab_href" type="text" data-language_key="input_placeholder_custom_new_tab_href" placeholder="" maxlength="1200" title="URL" />
+            </label>
+            <div class="input-alert font-mini select-text"><span class="language-span font-gray" id="input-custom_new_tab_href-alert" data-language_key="custom_new_tab_alert"></span></div>
+        </div>
+        <div class="settings-item">
+            <button class="btn-style border-radius font-text click" id="input-custom_new_tab_btn" title="Update"><span class="language-span" data-language_key="custom_new_tab_btn"></span></button>
+        </div>
+        <div class="settings-item-footer center">
+            <a class="settings-item-footer-a click" href="https://github.com/fyonecon/tabPureHome" target="_blank" title="https://github.com/fyonecon/tabPureHome">
+                <span class="language-span font-mini font-gray" data-language_key="app_name"></span>
+            </a>
+            <span class="settings-item-footer-version font-mini font-gray" id="settings-item-title-version"></span>
         </div>
     </div>
+    <!--页面脚本-->
+    <link rel="stylesheet" href="./popup.css">
     <script src="./popup.js"></script>
 </body>
 </html>
