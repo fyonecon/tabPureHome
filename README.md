@@ -42,17 +42,23 @@ tabtabPureHome
 
 ### Edge/Chrome 手动导入扩展：
 
-- 在浏览器打开网址 edge://extensions/ 或 chrome://extensions/ ；
+- 在浏览器打开网址 
+  > edge://extensions/
+  > 
+  > chrome://extensions/
 - 打开“开发人员模式”；
-- 点击“加载解压缩的扩展”，选择项目主文件夹即可导入。
+- 点击“加载解压缩的扩展”，选择项目主文件夹即可导入；
+- 关闭浏览器后，浏览器不会自动卸载此扩展。
 
 如图步骤：
 
 ![导入本地扩展-edge](./static/导入本地扩展-edge.png)
 
 ### Firefox 手动导入扩展：
-- 在浏览器打开网址 about:debugging#/runtime/this-firefox
-- 选择“从本地加入扩展”，选择项目主文件夹即可导入。
+- 在浏览器打开网址
+  > about:debugging#/runtime/this-firefox
+- 选择“加入临时扩展”，选中项目主文件夹中的“manifest.json”文件即可导入；
+- 注意，关闭Firefox后，浏览器会自动卸载这个扩展。
 
 如图步骤：
 
