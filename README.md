@@ -1,6 +1,6 @@
 # tabPureHome
 
-Chrome/Edge浏览器插件：自定义浏览器的新标签网址。
+Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
 项目地址：https://github.com/fyonecon/tabPureHome
 
@@ -30,13 +30,17 @@ tabtabPureHome
 └───static 其他静态文件（图标、图片、json等）
 ~~~
 
-如图效果：
+如图效果（Edge）：
 
-![ext-show](./static/ext-show.png)
+![ext-show-edge](./static/ext-show-edge.png)
+
+如图效果（Firefox）：
+
+![ext-show-firefox](./static/ext-show-firefox.png)
 
 ---
 
-### 手动导入扩展：
+### Edge/Chrome 手动导入扩展：
 
 - 在浏览器打开网址 edge://extensions/ 或 chrome://extensions/ ；
 - 打开“开发人员模式”；
@@ -44,8 +48,15 @@ tabtabPureHome
 
 如图步骤：
 
-![导入本地扩展](./static/导入本地扩展.png)
+![导入本地扩展-edge](./static/导入本地扩展-edge.png)
 
+### Firefox 手动导入扩展：
+- 在浏览器打开网址 about:debugging#/runtime/this-firefox
+- 选择“从本地加入扩展”，选择项目主文件夹即可导入。
+
+如图步骤：
+
+![导入本地扩展-firefox](./static/导入本地扩展-firefox.png)
 
 # 特别声明：
 不收集任何隐私！
