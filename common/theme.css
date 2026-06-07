@@ -143,7 +143,7 @@ img{
 }
 
 .border-radius{
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 /*  */
@@ -154,26 +154,26 @@ img{
 
 /* 亮主题·默认主题 */
 .body{
-    background: #eeeeee;
-    color: #191A1C;
+    background: #f9f9f9;
+    color: #202020;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 .input-style{
-    background: #eeeeee;
-    color: #191A1C;
+    background: #e9e9e9;
+    color: #202020;
 }
 
 
 /* 暗组题 */
 @media (prefers-color-scheme: dark) {
     .body{
-        background: #191A1C;
-        color: #fefefe;
+        background: #202020;
+        color: #f9f9f9;
         transition: background-color 0.2s ease, color 0.2s ease;
     }
     .input-style{
-        background: #191A1C;
-        color: #fefefe;
+        background: #303030;
+        color: #f9f9f9;
     }
 
 }

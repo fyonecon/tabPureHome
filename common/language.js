@@ -26,8 +26,8 @@ const language_dict = {
     },
     //
     input_placeholder_custom_new_tab_href: {
-        zh: "自定义新标签网址",
-        en: "Customize New Tab URL",
+        zh: "输入完整网址",
+        en: "Enter the complete URL",
     },
     custom_new_tab_btn: {
         zh: "保 存",
@@ -48,5 +48,9 @@ const language_dict = {
     custom_new_tab_alert_no: {
         zh: "❌ 更新失败",
         en: "❌ Save Failed",
+    },
+    custom_new_tab_alert_default: {
+        zh: "✅ 已设置为默认值",
+        en: "✅ Using default value",
     },
 };

@@ -13,6 +13,7 @@ function save_href(){
         let alert_txt_old = func.get_language("custom_new_tab_alert");
         let alert_txt_yes = func.get_language("custom_new_tab_alert_yes");
         let alert_txt_no = func.get_language("custom_new_tab_alert_no");
+        let alert_txt_default= func.get_language("custom_new_tab_alert_default");
         clearTimeout(timer_input_href_alert);
         //
         function remove_input_href_alert_font_color(){
@@ -21,27 +22,46 @@ function save_href(){
             ele_input_href_alert.classList.remove("font-red");
         }
         //
-        if (!func.is_url(href)){
-            remove_input_href_alert_font_color();
-            ele_input_href_alert.classList.add("font-red");
-            //
-            ele_input_href_alert.innerText = alert_txt_no;
-            timer_input_href_alert = setInterval(function(){
+        if (!func.is_url(href)){ // 错误
+            if (!href){
                 ele_input_href_alert.innerText = alert_txt_old;
                 remove_input_href_alert_font_color();
                 ele_input_href_alert.classList.add("font-gray");
-                //
-                ele_input_href.value = "";
-                ele_input_href.focus();
-            }, 3000);
-        }else{
+                // del
+                func.del_data("custom_new_tab_href").then(state => {
+                    show_href();
+                });
+                // alert
+                ele_input_href_alert.innerText = alert_txt_default;
+                timer_input_href_alert = setInterval(function(){
+                    ele_input_href_alert.innerText = alert_txt_old;
+                    remove_input_href_alert_font_color();
+                    ele_input_href_alert.classList.add("font-gray");
+                    //
+                    ele_input_href.focus();
+                }, 3000);
+            }else{
+                remove_input_href_alert_font_color();
+                ele_input_href_alert.classList.add("font-red");
+                // alert
+                ele_input_href_alert.innerText = alert_txt_no;
+                timer_input_href_alert = setInterval(function(){
+                    ele_input_href_alert.innerText = alert_txt_old;
+                    remove_input_href_alert_font_color();
+                    ele_input_href_alert.classList.add("font-gray");
+                    //
+                    ele_input_href.value = "";
+                    ele_input_href.focus();
+                }, 3000);
+            }
+        }else{ // 正确
             remove_input_href_alert_font_color();
             ele_input_href_alert.classList.add("font-blue");
-            //
+            // Save
             func.set_data("custom_new_tab_href", func.string_to_unicode(href)).then(value => {
                 show_href();
             });
-            //
+            // alert
             ele_input_href_alert.innerText = alert_txt_yes;
             timer_input_href_alert = setInterval(function(){
                 ele_input_href_alert.innerText = alert_txt_old;
