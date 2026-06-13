@@ -11,6 +11,20 @@ Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
 ---
 
+### 利用Node打包成Web Ext：
+在终端全局安装web-ext依赖：
+> npm install -g web-ext
+
+在终端检查web-ext是否安装成功：
+> web-ext --help
+
+在项目目录打包：
+> web-ext build
+> 
+> 生成的xxx.zip包就是插件包，Firefox可以将 .zip 后缀改成 .xpi ，Edge/Chrome可以将 .zip 后缀改成 .crx 。
+
+---
+
 ### 项目结构：
 ~~~
 tabtabPureHome
