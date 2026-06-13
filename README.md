@@ -11,7 +11,7 @@ Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
 ---
 
-### 利用Node打包成Web Ext：
+### 利用Node打包成Web Ext （待验证）：
 在终端全局安装web-ext依赖：
 > npm install -g web-ext
 
