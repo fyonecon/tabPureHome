@@ -15,6 +15,22 @@
     "default_title": "tabPureHome"
   },
   "icons": {
-    "128": "./static/appicon.png"
+    "16": "./static/appicon-16.png",
+    "32": "./static/appicon-32.png",
+    "48": "./static/appicon-48.png",
+    "128": "./static/appicon-128.png"
+  },
+  "minimum_chrome_version": "143.0",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "tabpurehome@datathink.top",
+      "strict_min_version": "143.0",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    },
+    "safari": {
+      "strict_min_version": "18.0"
+    }
   }
 }

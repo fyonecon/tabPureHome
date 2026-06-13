@@ -7,7 +7,7 @@ function task_new_tab(){
         if (func.is_url(href)){
             func.goto_href(href, "_replace");
         }else{
-            document.getElementsByClassName("index-msg")[0].innerHTML = "Error Href: " + href;
+            document.getElementsByClassName("index-msg")[0].innerText = "Error Href: " + href;
         }
     });
 }

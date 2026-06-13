@@ -20,8 +20,14 @@ Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
 在项目目录打包：
 > web-ext build
-> 
-> 生成的xxx.zip包就是插件包，Firefox可以将 .zip 后缀改成 .xpi ，Edge/Chrome可以将 .zip 后缀改成 .crx 。
+
+如果你打算将扩展发布到 AMO (addons.mozilla.org) 供其他用户下载，或者希望在 Firefox 正式版中永久安装且不出现“未签名”提示，必须通过 Mozilla 官方进行签名。
+~~~
+流程：将扩展打包为 .zip -> 上传至 Mozilla 开发者中心（https://addons.mozilla.org/zh-CN/developers/） -> 等待自动签名 -> 下载签好名的 .xpi 文件。
+
+注意：未签名的扩展通常仅适用于 Firefox 开发者版（Developer Edition）和每日构建版（Nightly）的临时加载模式。
+
+~~~
 
 ---
 

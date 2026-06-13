@@ -173,7 +173,7 @@ const func = {
             for (let i = 0; i < spans.length; i++) {
                 const the_span = spans[i];
                 const the_key = the_span.getAttribute("data-language_key");
-                the_span.innerHTML = func.get_language(the_key);
+                the_span.innerText = func.get_language(the_key);
             }
         }else{
             console.warn("document is not supported!");
