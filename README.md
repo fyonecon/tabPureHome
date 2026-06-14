@@ -2,6 +2,10 @@
 
 Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
+支持：中文、英语、德语、日文、越语
+
+不收集任何隐私！
+
 项目地址：https://github.com/fyonecon/tabPureHome
 
 ---
