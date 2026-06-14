@@ -96,6 +96,7 @@ function page_start(e){
     // 初始化
     show_href();
     save_href();
+    show_a_target_radio();
 
     // 其他
     document.getElementById("settings-item-title-version").innerText = "v"+config.app_version;
