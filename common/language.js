@@ -86,11 +86,11 @@ const language_dict = {
         vi: "❌ Cập nhật thất bại",
     },
     custom_new_tab_alert_default: {
-        zh: "✅ 已设置为网址",
+        zh: "✅ 已设置为默认网址",
         en: "✅ Using default URL",
-        jp: "✅ Webアドレスに設定されている",
-        de: "✅ Als URL festgelegt",
-        vi: "✅ Đã được đặt làm địa chỉ URL",
+        jp: "✅ デフォルトの URL アドレスに設定されています",
+        de: "✅ Als Standard-URL festgelegt",
+        vi: "✅ Nó được đặt làm địa chỉ URL mặc định.",
     },
     help_msg_browser_set_change: {
         zh: "💡 初次开启本扩展时，浏览器会提示“保持更改”，请点击同意更改。",
