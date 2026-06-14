@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "tabPureHome",
+  "version": "1.0.3",
+  "description": "Customize Browser New Tab URL (自定义浏览器的新标签页网址).",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "chrome_url_overrides": {
+    "newtab": "./pages/index/index.html"
+  },
+  "action": {
+    "default_popup": "./pages/popup/popup.html",
+    "default_title": "tabPureHome"
+  },
+  "icons": {
+    "16": "./static/appicon-16.png",
+    "32": "./static/appicon-32.png",
+    "48": "./static/appicon-48.png",
+    "128": "./static/appicon-128.png"
+  },
+  "minimum_chrome_version": "143.0"
+}

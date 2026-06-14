@@ -7,9 +7,10 @@ function page_start(e){
 }
 
 // 页面加载完成后
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", page_start);
-} else {
-    page_start(2);
-}
-
+(function (){
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", page_start);
+    } else {
+        page_start(2);
+    }
+})();

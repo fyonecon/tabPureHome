@@ -88,15 +88,15 @@ const func = {
             else if (_language.indexOf("en") >= 0){ // 英文
                 return "en";
             }
-            // else if (_language.indexOf("jp") >= 0){ // 日文
-            //     return "jp";
-            // }
+            else if (_language.indexOf("jp") >= 0){ // 日文
+                return "jp";
+            }
             // else if (_language.indexOf("fr") >= 0){ // 法语
             //     return "fr";
             // }
-            // else if (_language.indexOf("de") >= 0){ // 德语
-            //     return "de";
-            // }
+            else if (_language.indexOf("de") >= 0){ // 德语
+                return "de";
+            }
             // else if (_language.indexOf("ru") >= 0){ // 俄语或乌克兰语
             //     return "ru";
             // }
@@ -106,9 +106,9 @@ const func = {
             // else if (_language.indexOf("ko") >= 0){ // 韩语或朝鲜语
             //     return "ko";
             // }
-            // else if (_language.indexOf("vi") >= 0){ // 越语
-            //     return "vi";
-            // }
+            else if (_language.indexOf("vi") >= 0){ // 越语
+                return "vi";
+            }
             else{ // 默认英文
                 return "en"
             }
@@ -298,5 +298,117 @@ const func = {
             return unicode;
         }
     },
+    get_time_s: function () {
+        return Math.floor((new Date()).getTime()/1000);
+    }, // 秒时间戳，s
+    get_time_ms: function(){
+        return (new Date()).getTime();
+    }, // 毫秒时间戳，ms
+    get_time_date: function(format){ // Ymd His
+        let that = this;
+        return that.get_time_s_date(format, "");
+    },
+    get_time_s_date: function(format, time_s){ // YmdHisW，日期周
+        let that = this;
+        let t;
+        if (!time_s){
+            t = new Date();
+        }else {
+            t = new Date(time_s*1);
+        }
+        let seconds = t.getSeconds(); if (seconds<10){seconds = "0"+seconds;}
+        let minutes = t.getMinutes(); if (minutes<10){minutes = "0"+minutes;}
+        let hour = t.getHours(); if (hour<10){hour = "0"+hour;}
+        let day = t.getDate(); if (day<10){day = "0"+day;}
+        let month = t.getMonth() + 1; if (month<10){month = "0"+month;}
+        let year = t.getFullYear();
+        let week = ["week1", "week2", "week3", "week4", "week5", "week6", "week7"][t.getDay()]; // 周
 
+        format = format.replaceAll("Y", year);
+        format = format.replaceAll("m", month);
+        format = format.replaceAll("d", day);
+        format = format.replaceAll("H", hour);
+        format = format.replaceAll("i", minutes);
+        format = format.replaceAll("s", seconds);
+        format = format.replaceAll("W", week);
+
+        return format;
+    },
+    get_time_ms_format: function (format, time_ms){ // 毫秒时间戳转日期
+        let that = this;
+        if (!time_ms){
+            time_ms = that.get_time_ms();
+        }else{
+            time_ms = time_ms*1;
+        }
+        return this.get_time_s_date(format, time_ms);
+    },
+    format_date: function (new_format, date){ // (只YmdHis格式, 新YmdHis格式)
+        date = date+""; // 必须string
+        let year = date.slice(0,4);
+        let month = date.slice(4,6);
+        let day = date.slice(6,8);
+        let hour = date.slice(8,10);
+        let minutes = date.slice(10,12);
+        let seconds = date.slice(12,14);
+
+        let format = new_format;
+
+        format = format.replaceAll("Y", year);
+        format = format.replaceAll("m", month);
+        format = format.replaceAll("d", day);
+        format = format.replaceAll("H", hour);
+        format = format.replaceAll("i", minutes);
+        format = format.replaceAll("s", seconds);
+
+        return format;
+    },
+    js_rand: function (min, max) { // [min, max]
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    },
+    md5: function(str) {
+        return md5_string(str);
+    },
+    make_app_uid: function(){
+        let that = this;
+        //
+        let only_string = that.get_time_ms().toString() + "#" + this.js_rand(10000000, 999999999).toString() + "#" + navigator.userAgent.toLowerCase();
+        return that.md5(config.app_class+only_string);
+    },
+    is_ios: function () {
+        const ua = navigator.userAgent.toLowerCase();
+        return (/iphone/i.test(ua)) || (/ipad/i.test(ua)) || (/ipod/i.test(ua));
+    } ,
+    is_android: function (){
+        const ua = navigator.userAgent.toLowerCase();
+        return ( (/android/i).test(ua) ) || ( (/hm/i).test(ua) || (/harmony/i).test(ua) );
+    },
+    is_mac: function (){
+        let that = this;
+        const ua = navigator.userAgent.toLowerCase();
+        return ( (/macintosh/i.test(ua)) || (/mac os x/i.test(ua)) ) && !that.is_ios();
+    },
+    is_win: function (){
+        const ua = navigator.userAgent.toLowerCase();
+        return (/windows/i).test(ua);
+    },
+    is_linux: function (){
+        let that = this;
+        const ua = navigator.userAgent.toLowerCase();
+        return (/linux/i).test(ua) && !that.is_android;
+    },
+    is_firefox: function (){
+        const ua = navigator.userAgent.toLowerCase();
+
+        let js_runtime_state = false;
+        try {
+            js_runtime_state = CSS.supports("-moz-appearance", "none");
+        }catch(e){}
+
+        return (/firefox/i.test(ua)) || (/fx/i.test(ua)) || js_runtime_state;
+    },
+    is_edge: function (){
+        const ua = navigator.userAgent.toLowerCase();
+        return (/edg/i.test(ua));
+    },
 };

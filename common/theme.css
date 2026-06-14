@@ -143,7 +143,11 @@ img{
 }
 
 .border-radius{
-    border-radius: 20px;
+    border-radius: 25px;
+}
+
+.border-bottom{
+    border-bottom:2px dotted rgba(160,160,160, 0.8);
 }
 
 /*  */
