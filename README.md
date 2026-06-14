@@ -1,8 +1,8 @@
-# tabPureHome
+# tabPureHome，自定义浏览器的新标签网址
 
-Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
+支持浏览器：Edge、Firefox
 
-支持：中文、英语、德语、日文、越语
+支持的语言：中文、英语、德语、日文、越语
 
 不收集任何隐私！
 
@@ -15,7 +15,7 @@ Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 
 ---
 
-### 利用Node打包成Web Ext （待验证）：
+### 利用Node打包成Web Extension：
 在终端全局安装web-ext依赖：
 > npm install -g web-ext
 
@@ -23,25 +23,21 @@ Chrome/Edge/Firefox浏览器插件：自定义浏览器的新标签网址。
 > web-ext --help
 
 在项目目录打包：
+
 > web-ext build
 
-如果你打算将扩展发布到 AMO (addons.mozilla.org) 供其他用户下载，或者希望在 Firefox 正式版中永久安装且不出现“未签名”提示，必须通过 Mozilla 官方进行签名。
-~~~
-流程：将扩展打包为 .zip -> 上传至 Mozilla 开发者中心（https://addons.mozilla.org/zh-CN/developers/） -> 等待自动签名 -> 下载签好名的 .xpi 文件。
-
-注意：未签名的扩展通常仅适用于 Firefox 开发者版（Developer Edition）和每日构建版（Nightly）的临时加载模式。
-
-~~~
+打包后的“xxx.zip”文件就是要提交到浏览器应用商店的文件。
 
 ---
 
 ### 项目结构：
 ~~~
-tabtabPureHome
+tabPureHome
 ├───common 公共脚本文件
-│   ├───theme.css 主题
+│   ├───theme.css 全局主题
 │   ├───config.js js配置信息
 │   ├───func.js 公共函数
+│   ├───md5.js
 │   └───language.js 翻译
 ├───pages 具体页面
 │   ├───example 示例页面
@@ -51,22 +47,14 @@ tabtabPureHome
 │   ├───index 引导页
 │   └───popup 设置页或浏览器插件icon页
 ├───manifest.json 浏览器插件配置文件
-└───static 其他静态文件（图标、图片、json等）
+└───static 其他静态文件（图标、图片、备份json 等）
 ~~~
-
-如图效果（Edge）：
-
-![ext-show-edge](./static/ext-show-edge.png)
-
-如图效果（Firefox）：
-
-![ext-show-firefox](./static/ext-show-firefox.png)
 
 ---
 
-### Edge/Chrome 手动导入扩展：
+### Edge 手动导入扩展：
 
-- 在浏览器打开网址 
+- 在浏览器打开网址：
   > edge://extensions/
   > 
   > chrome://extensions/
@@ -74,19 +62,18 @@ tabtabPureHome
 - 点击“加载解压缩的扩展”，选择项目主文件夹即可导入；
 - 关闭浏览器后，浏览器不会自动卸载此扩展。
 
-如图步骤：
-
-![导入本地扩展-edge](./static/导入本地扩展-edge.png)
-
 ### Firefox 手动导入扩展：
-- 在浏览器打开网址
+- 在浏览器打开网址：
   > about:debugging#/runtime/this-firefox
 - 选择“加入临时扩展”，选中项目主文件夹中的“manifest.json”文件即可导入；
 - 注意，关闭Firefox后，浏览器会自动卸载这个扩展。
 
-如图步骤：
+### 提交到浏览器应用商店：
+Edge:
+> https://partner.microsoft.com/en-us/dashboard/microsoftedge/overview
 
-![导入本地扩展-firefox](./static/导入本地扩展-firefox.png)
+Firefox:
+> https://addons.mozilla.org/zh-CN/developers/addons
 
 # 特别声明：
 不收集任何隐私！

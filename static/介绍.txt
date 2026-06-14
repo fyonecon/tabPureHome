@@ -1,0 +1,44 @@
+自定义浏览器的新标签页网址（Customize Browser New Tab URL ）。
+
+不收集任何隐私！
+
+- 适配了浏览器自动亮/暗显示；
+- 适配了简体中文、英语、日文、德语；
+- 需要v143及以上的浏览器版本。
+
+
+Customize Browser New Tab URL (自定义浏览器的新标签页网址).
+
+No privacy data collected!
+
+Running:
+- Compatible with browser auto-brightness adjustment;
+- Compatible with Simplified Chinese, English, Japanese, and German;
+- Requires browser version v143 or higher.
+
+How It Works:  
+1. Install the tabPureHome extension from your browser’s official extension store.  
+2. Click the extension icon to open the settings popup.  
+3. Enter the URL you want to use as your new tab page into the provided input field.  
+4. Press the save button; the extension will validate the URL and promptly show a confirmation message upon success or an error alert if the URL is invalid.  
+5. Upon successful configuration, every new tab you open will automatically redirect to the URL you specified, replacing the browser’s default new tab page.  
+6. If needed, revisit the popup to view the current extension version or navigate to the GitHub project page to learn more or contribute.  
+7. The extension automatically adjusts interface text and messages based on your preferred language to ensure clarity and ease of use.
+
+
+
+
+https://github.com/fyonecon/tabPureHome
+
+
+在本地存储你自己设置的信息（具体：新标签网址。）。
+
+替换你的新标签网址（具体：获取你的新标签地址，只替换为你自己设置的网址。）。
+
+Store the information you set locally (specifically: the new tab URL. ).
+
+Replace your new tab URL (specifically: obtain your new tab address and only replace it with the URL you set yourself. ).
+
+
+
+
