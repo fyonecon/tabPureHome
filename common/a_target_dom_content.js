@@ -1,4 +1,4 @@
-// dom_content.js - 注入到每个页面的内容脚本
+// dom_content.js - 注入到每个网页内容的脚本
 // 负责实际修改a标签链接的target属性，只对a标签有用，js跳转无用
 
 let currentRadioMode = '_default'; // 取值范围：'_default' '_blank' '_self'

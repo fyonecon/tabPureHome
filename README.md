@@ -38,6 +38,8 @@ tabPureHome
 │   ├───config.js js配置信息
 │   ├───func.js 公共函数
 │   ├───md5.js
+│   ├───a_target_dom_content.js 注入到每个网页内容的脚本
+│   ├───a_target_setting.js 设置target mode选中
 │   └───language.js 翻译
 ├───pages 具体页面
 │   ├───example 示例页面

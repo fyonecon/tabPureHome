@@ -1,5 +1,6 @@
+// 设置 target mode 选中
 
-let currentRadioMode = '_default';
+let currentRadioMode = '_default'; // 取值范围：'_default' '_blank' '_self'
 let custom_a_target_alert_timer = 0;
 
 // DOM 元素
