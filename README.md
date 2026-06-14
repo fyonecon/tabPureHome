@@ -1,4 +1,4 @@
-# tabPureHome，自定义浏览器的新标签网址和打开链接的方式
+# tabPureHome，自定义浏览器的新标签网址和在页面中打开链接的方式
 
 支持浏览器：Edge、Firefox
 
