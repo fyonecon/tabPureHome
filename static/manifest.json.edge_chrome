@@ -14,6 +14,13 @@
     "default_popup": "./pages/popup/popup.html",
     "default_title": "tabPureHome"
   },
+  "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["./common/config.js", "./common/func.js","./common/a_target_dom_content.js"],
+        "run_at": "document_end"
+      }
+    ],
   "icons": {
     "16": "./static/appicon-16.png",
     "32": "./static/appicon-32.png",
