@@ -59,6 +59,21 @@ tabPureHome
 
 ---
 
+Firefox：
+
+<img src="./docs/firefox-1280-800.png" style="max-width:100%" alt="./docs/firefox-1280-800.png" />
+
+Edge：
+
+<img src="./docs/edge-1280-800.png" style="max-width:100%" alt="./docs/edge-1280-800.png" />
+
+[//]: # (Chrome：)
+
+[//]: # ()
+[//]: # (<img src="./docs/chrome-1280-800.png" style="max-width:100%" alt="./docs/chrome-1280-800.png" />)
+
+---
+
 ### Edge 手动导入扩展：
 
 - 在浏览器打开网址：
