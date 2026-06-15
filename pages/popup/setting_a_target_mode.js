@@ -3,16 +3,16 @@
 let currentRadioMode = '_default'; // 取值范围：'_default' '_blank' '_self'
 let custom_a_target_alert_timer = 0;
 
-// DOM 元素
+// ele
 const modeDefault = document.getElementById('modeDefault');
 const modeSelf = document.getElementById('modeSelf');
 const modeBlank = document.getElementById('modeBlank');
 const custom_a_target_alert = document.getElementById('radio-custom_a_target-alert');
 const radioAlert = document.getElementById('radioAlert');
 
-// 展示选中UI
+// 渲染选中UI
 function show_a_target_radio() {
-    func.get_data("custom_a_target_method").then(mode => {
+    func.get_data("custom_a_target_mode").then(mode => {
         currentRadioMode = mode;
         // 更新UI选中样式
         if (mode === '_self') {
@@ -25,12 +25,12 @@ function show_a_target_radio() {
     });
 }
 
-// 保存模式
-function setRadioMode(mode) {
+// 保存模式数据
+function set_a_target_radio_mode(mode) {
     currentRadioMode = mode;
     //
     clearTimeout(custom_a_target_alert_timer);
-    func.set_data('custom_a_target_method', mode).then(mode => {
+    func.set_data('custom_a_target_mode', mode).then(mode => {
         // alert
         custom_a_target_alert.innerText = func.get_language("custom_a_target_alert");
         radioAlert.classList.remove("hide");
@@ -43,19 +43,19 @@ function setRadioMode(mode) {
     });
 }
 
-// 监听Radio
+// 监听Radio单选
 modeDefault.addEventListener('change', async () => {
     if (modeDefault.checked) {
-        setRadioMode('_default');
+        set_a_target_radio_mode('_default');
     }
 });
 modeSelf.addEventListener('change', async () => {
     if (modeSelf.checked) {
-        setRadioMode('_self');
+        set_a_target_radio_mode('_self');
     }
 });
 modeBlank.addEventListener('change', async () => {
     if (modeBlank.checked) {
-        setRadioMode('_blank');
+        set_a_target_radio_mode('_blank');
     }
 });

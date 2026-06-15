@@ -7,7 +7,7 @@ function task_new_tab(){
         if (func.is_url(href)){
             func.goto_href(href, "_replace");
         }else{
-            document.getElementsByClassName("index-msg")[0].innerText = "Error Href: " + href;
+            document.getElementsByClassName("index_new_tab-msg")[0].innerText = "Error Href: " + href;
         }
     });
 }
@@ -19,7 +19,7 @@ function page_start(e){
     //     if (!uid){func.set_data("app_uid", func.make_app_uid()).then(res =>{}) ;}
     // });
     // 页面翻译
-    func.set_language_title("index");
+    func.set_language_title("index_new_tab");
     func.set_language_span();
     // 执行跳转
     task_new_tab();

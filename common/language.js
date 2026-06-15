@@ -21,7 +21,7 @@ const language_dict = {
         de: "Beispielseite",
         vi: "Ví dụ trang",
     },
-    index: {
+    index_new_tab: {
         zh: "新标签",
         en: "New Tab",
         jp: "新しいラベル",

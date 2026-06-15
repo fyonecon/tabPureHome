@@ -2,7 +2,9 @@
 
 支持浏览器：Edge、Firefox
 
-支持的语言：中文、英语、德语、日文、越语
+支持的语言（自动）：中文、英语、德语、日文、越语
+
+支持主题（自动）：明/暗
 
 不收集任何隐私！
 
@@ -32,24 +34,27 @@
 
 ### 项目结构：
 ~~~
+
 tabPureHome
+├───docs 文档、备份等
 ├───common 公共脚本文件
 │   ├───theme.css 全局主题
 │   ├───config.js js配置信息
 │   ├───func.js 公共函数
 │   ├───md5.js
-│   ├───a_target_dom_content.js 注入到每个网页内容的脚本
-│   ├───a_target_setting.js 设置target mode选中
-│   └───language.js 翻译
+│   └───language.js 翻译对照表
+├───content 注入或管理网页内容
+│   └───dom_a_target.js 注入到每个网页内容的脚本
 ├───pages 具体页面
 │   ├───example 示例页面
 │   │   ├───example.html 页面html
 │   │   ├───example.js 页面局部js
 │   │   └───example.css 页面局部css
-│   ├───index 引导页
+│   ├───index_new_tab 新标签引导页
 │   └───popup 设置页或浏览器插件icon页
 ├───manifest.json 浏览器插件配置文件
-└───static 其他静态文件（图标、图片、备份json 等）
+└───static 其他静态文件（图标、图片）
+
 ~~~
 
 ---

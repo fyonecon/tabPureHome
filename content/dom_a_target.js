@@ -9,32 +9,33 @@ function updateStaticLinks(mode) {
     const allLinks = document.querySelectorAll('a');
     let updatedACount = 0;
 
+    //
     allLinks.forEach(link => {
         const href = link.getAttribute('href');
         // 跳过特殊链接
         if (href && (href.startsWith('javascript:') || href.startsWith('JAVASCRIPT:') || href.startsWith('#') || href === '#' || href === '')) {
-            // console.log("已跳过情况-1");
+            func.console_log("已跳过情况-1");
         }else{
             // 设置target
             if (mode === '_self' || mode === '_blank') {
                 link.target = mode;
                 updatedACount++;
             }else{ // 默认链接的target，不做任何动作：_default
-                // console.log("已跳过情况-2");
+                func.console_log("已跳过情况-2");
             }
         }
     });
 
-    console.log(`[LinkTarget] 已更新 ${updatedACount} 个链接，目标模式: ${mode}`);
+    func.console_log(`[LinkTarget] 已更新 ${updatedACount} 个链接，目标模式: ${mode}`);
     return updatedACount;
 }
 
 // 监听动态链接，安装MutationObserver
 function observerAliveLinks() {
-    if (observer) {
-        observer.disconnect();
-    }
+    //
+    if (observer) {observer.disconnect();}
 
+    //
     observer = new MutationObserver((mutations) => {
         const addedLinks = [];
 
@@ -61,11 +62,11 @@ function observerAliveLinks() {
                     if (currentRadioMode === '_self' || currentRadioMode === '_blank') {
                         link.target = currentRadioMode;
                     }else{ // 默认链接的target，不做任何动作：_default
-                        // console.log("已跳过情况-3");
+                        func.console_log("已跳过情况-3");
                     }
                 }
             });
-            console.log(`[LinkTarget] 处理了 ${addedLinks.length} 个动态添加的链接`);
+            func.console_log(`[LinkTarget] 处理了 ${addedLinks.length} 个动态添加的链接`);
         }
     });
 
@@ -86,9 +87,10 @@ function observerAliveLinks() {
     }
 }
 
-// 应用新模式
-function applyNewMode(mode) {
+// 应用模式
+function applyMode(mode) {
     if (mode === '_self' || mode === '_blank' || mode === '_default') {
+        func.console_log("获取的mode=", mode);
         // 更新静态网页链接
         updateStaticLinks(mode);
         // 监听动态网页链接，确保observer已安装
@@ -101,19 +103,19 @@ function applyNewMode(mode) {
 }
 
 // 页面加载完成后初始化
-function init() {
-    func.get_data('custom_a_target_method').then(mode => {
+function init_dom_a_target(e) {
+    func.get_data('custom_a_target_mode').then(mode => {
         const savedMode = mode || '_default';
         currentRadioMode = savedMode;
-        applyNewMode(savedMode);
+        applyMode(savedMode);
     });
 }
 
 // 如果页面已经加载完成，立即初始化
 (function (){
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', init_dom_a_target);
     } else {
-        init();
+        init_dom_a_target(2);
     }
 })();

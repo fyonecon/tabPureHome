@@ -1,5 +1,20 @@
 // 公共函数
 const func = {
+    console_log: function (...log) {
+        if (config.console_debug){
+            console.log("["+config.app_name+"日志Log] ", log);
+        }
+    },
+    console_warn: function (...log) {
+        if (config.console_debug){
+            console.warn("["+config.app_name+"日志warn] ", ...log);
+        }
+    },
+    // console_error: function (...log) { // 错误就在页面或控制台直接显示
+    //     if (config.console_debug){
+    //         console.error("["+config.app_name+"日志Error] ", ...log);
+    //     }
+    // },
     get_data:function(key="") { // 读取数据
         key = config.app_class + key;
         return new Promise((resolve)=>{
