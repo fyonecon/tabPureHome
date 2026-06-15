@@ -179,6 +179,12 @@ img{
     border-bottom:1px solid rgba(160,160,160, 0.4);
 }
 
+.a-href{
+    text-decoration: none;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
 /*  */
 
 .app{

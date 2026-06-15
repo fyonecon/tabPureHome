@@ -43,6 +43,13 @@ const language_dict = {
         vi: "tabPureHome",
     },
     //
+    opening: {
+        zh: "正在打开",
+        en: "Opening",
+        jp: "開いています",
+        de: "Wird geöffnet",
+        vi: "Đang mở",
+    },
     custom_new_tab_title:{
         zh: "自定义新标签网址",
         en: "Customize New Tab URL",

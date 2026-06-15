@@ -426,4 +426,96 @@ const func = {
         const ua = navigator.userAgent.toLowerCase();
         return (/edg/i.test(ua));
     },
+    is_brave: function (){
+        const ua = navigator.userAgent.toLowerCase();
+        let js_runtime_state = false;
+        try { js_runtime_state = (navigator.brave || typeof navigator.brave.isBrave === 'function'); }catch(e){}
+        return ( /brave/i.test(ua) || js_runtime_state );
+    },
+    is_samsung: function (){
+        const ua = navigator.userAgent.toLowerCase();
+        return (/samsung/i.test(ua));
+    },
+    is_chrome: function (){ // 仅是Chrome本尊
+        let that = this;
+        const ua = navigator.userAgent.toLowerCase();
+        //
+        // const isFirefox = (/firefox/i.test(ua)) || (/fx/i.test(ua));
+        const isChrome = (/chrome/i.test(ua)) || (/ch/i.test(ua));
+        const isEdge = (/edg/i.test(ua)) || (/bing/i.test(ua)); // 包含老Edge
+        const isBrave = (/brave/i.test(ua));
+        const isYandex = (/ya/i.test(ua));
+        const isOpera = (/opera/i.test(ua)) || (/opr/i.test(ua)) || (/opt/i.test(ua));
+        const isSamsung = (/samsung/i.test(ua));
+        const isDuckDuckGo = (/duckDuckGo/i.test(ua)) || (/ddg/i.test(ua));
+        const isMeta = (/facebook/i.test(ua)) || (/ins/i.test(ua)) || (/meta/i.test(ua));
+        // 盲
+        const isAI = (/ai/i.test(ua));
+        const isBuild = (/build/i.test(ua)) || (/com/i.test(ua)) || (/cn/i.test(ua)) || (/dev/i.test(ua));
+        // 国内
+        const isQQ = (/qq/i.test(ua)) || (/qqbrowser/i.test(ua));
+        const isUC = (/uc/i.test(ua));
+        const isSogou = (/sogou/i.test(ua));
+        const isVivaldi = (/vivaldi/i.test(ua));
+        const isQuark = (/quark/i.test(ua));
+        const isBaidu = (/baidu/i.test(ua));
+        const isMaxthon = (/maxthon/i.test(ua));
+        const is360 = (/360/i.test(ua));
+        const isLiebao = (/lb/i.test(ua));
+        const isMeituan = (/meituan/i.test(ua)) || (/mt/i.test(ua));
+        const isDouyin = (/douyin/i.test(ua)) || (/tiktok/i.test(ua)) || (/byte/i.test(ua)) || (/aweme/i.test(ua)) || (/news/i.test(ua)) || (/toutiao/i.test(ua));
+        //
+        return isChrome && !( isEdge || isBrave || isBrave || isYandex || isOpera || isSamsung || isDuckDuckGo || isMeta || isAI || isBuild || isQQ || isUC || isSogou || isVivaldi || isQuark || isQuark || isBaidu || isMaxthon || is360 || isLiebao || isMeituan || isDouyin);
+    },
+    is_safari: function (){ // 仅是Safari本尊
+        let that = this;
+        const ua = navigator.userAgent.toLowerCase();
+        //
+        const isAppleWebKit = /applewebKit/i.test(ua);
+        // 排除其他浏览器
+        // 国际
+        const isFirefox = (/firefox/i.test(ua)) || (/fx/i.test(ua));
+        const isChrome = (/chrome/i.test(ua)) || (/ch/i.test(ua));
+        const isEdge = (/edg/i.test(ua)) || (/bing/i.test(ua)); // 包含老Edge
+        const isBrave = (/brave/i.test(ua));
+        const isYandex = (/ya/i.test(ua));
+        const isOpera = (/opera/i.test(ua)) || (/opr/i.test(ua)) || (/opt/i.test(ua));
+        const isSamsung = (/samsung/i.test(ua));
+        const isDuckDuckGo = (/duckDuckGo/i.test(ua)) || (/ddg/i.test(ua));
+        const isMeta = (/facebook/i.test(ua)) || (/ins/i.test(ua)) || (/meta/i.test(ua));
+        // 盲
+        const isAI = (/ai/i.test(ua));
+        const isBuild = (/build/i.test(ua)) || (/com/i.test(ua)) || (/cn/i.test(ua)) || (/dev/i.test(ua));
+        // 国内
+        const isQQ = (/qq/i.test(ua)) || (/qqbrowser/i.test(ua));
+        const isUC = (/uc/i.test(ua));
+        const isSogou = (/sogou/i.test(ua));
+        const isVivaldi = (/vivaldi/i.test(ua));
+        const isQuark = (/quark/i.test(ua));
+        const isBaidu = (/baidu/i.test(ua));
+        const isMaxthon = (/maxthon/i.test(ua));
+        const is360 = (/360/i.test(ua));
+        const isLiebao = (/lb/i.test(ua));
+        const isMeituan = (/meituan/i.test(ua)) || (/mt/i.test(ua));
+        const isDouyin = (/douyin/i.test(ua)) || (/tiktok/i.test(ua)) || (/byte/i.test(ua)) || (/aweme/i.test(ua)) || (/news/i.test(ua)) || (/toutiao/i.test(ua));
+        //
+        const agent_state = isAppleWebKit && (that.is_ios() || that.is_mac()) && !(that.is_android() || that.is_win() || that.is_linux()) && !( isFirefox || isChrome || isEdge  || isBrave || isBrave || isYandex || isOpera || isSamsung || isDuckDuckGo || isMeta || isAI || isBuild || isQQ || isUC || isSogou || isVivaldi || isQuark || isQuark || isBaidu || isMaxthon || is360 || isLiebao || isMeituan || isDouyin);
+        //
+        let js_runtime_state = false;
+        try {
+            js_runtime_state = ((typeof safari !== "undefined") || (CSS.supports("font", "-apple-system-body")));
+        }catch(e){
+            js_runtime_state = CSS.supports("font", "-apple-system-body");
+        }
+
+        return agent_state || js_runtime_state;
+    },
+    get_runtime_info: function() {
+        let that = this;
+        //
+        return {
+            "sys_platform": that.is_win() ? "Win" : (that.is_mac() ? "Mac" : that.is_android()?"Android":(that.is_ios()?"iOS/iPad":(that.is_linux()?"Linux":("Others")))),
+            "browser_name": that.is_firefox() ? "Firefox" : (that.is_edge() ? "Edge" : (that.is_chrome() ? "Chrome" : (that.is_brave() ? "Brave" : (that.is_samsung()?"Samsung":(that.is_safari()?"Safari":"Others"))))),
+        };
+    },
 };
