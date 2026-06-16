@@ -43,9 +43,6 @@ Store the information you set locally (specifically: the new tab URL. ).
 Replace your new tab URL (specifically: obtain your new tab address and only replace it with the URL you set yourself. ).
 替换你的新标签网址（具体：获取你的新标签地址，只替换为你自己设置的网址。）。
 
-Modify the target attribute of the 'a' tag on the webpage (specifically: simply change the target attribute). ）.
-修改网页中的a标签的target属性（具体：只需改target属性。）。
-
 
 
 ====================================
