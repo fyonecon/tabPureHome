@@ -28,7 +28,7 @@ function set_a_target_radio_mode(mode) {
     clearTimeout(custom_a_target_alert_timer);
     func.set_data('custom_a_target_mode', mode).then(mode => {
         // alert
-        custom_a_target_alert.innerText = func.get_language("custom_a_target_alert");
+        custom_a_target_alert.innerText = func.get_language("custom_a_target_alert") + ": " + mode.toUpperCase();
         radioAlert.classList.remove("hide");
         custom_a_target_alert_timer = setInterval(() => {
             custom_a_target_alert.innerText = "";

@@ -142,11 +142,11 @@ const language_dict = {
         vi: "Tab mới (_blank)",
     },
     custom_a_target_alert: {
-        zh: "✅ 已设置。手动刷新你的标签网页可启用。",
-        en: "✅ Already set. Manually refreshing your tagged webpage can be enabled.",
-        jp: "✅ 設定済み。タグページの手動更新で有効化できます。",
-        de: "✅ Einrichtet. Die manuelle Aktualisierung Ihrer Tab-Seite ist aktiviert.",
-        vi: "✅ Đã cài đặt. Bạn có thể bật nó bằng cách làm mới trang nhãn của bạn thủ công.",
+        zh: "✅ 已设置。手动刷新你的标签网页可启用",
+        en: "✅ Already set. Manually refreshing your tagged webpage can be enabled",
+        jp: "✅ 設定済み。タグページの手動更新で有効化できます",
+        de: "✅ Einrichtet. Die manuelle Aktualisierung Ihrer Tab-Seite ist aktiviert",
+        vi: "✅ Đã cài đặt. Bạn có thể bật nó bằng cách làm mới trang nhãn của bạn thủ công",
     },
     help_msg_browser_set_a_target: {
         zh: "💡 修改页面所有 <a> 链接的 target 属性，对 JS 点击属性无效。",
