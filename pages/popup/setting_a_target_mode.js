@@ -1,6 +1,5 @@
 // 设置 target mode 选中
 
-let currentRadioMode = '_default'; // 取值范围：'_default' '_blank' '_self'
 let custom_a_target_alert_timer = 0;
 
 // ele
@@ -13,7 +12,6 @@ const radioAlert = document.getElementById('radioAlert');
 // 渲染选中UI
 function show_a_target_radio() {
     func.get_data("custom_a_target_mode").then(mode => {
-        currentRadioMode = mode;
         // 更新UI选中样式
         if (mode === '_self') {
             modeSelf.checked = true;
@@ -27,8 +25,6 @@ function show_a_target_radio() {
 
 // 保存模式数据
 function set_a_target_radio_mode(mode) {
-    currentRadioMode = mode;
-    //
     clearTimeout(custom_a_target_alert_timer);
     func.set_data('custom_a_target_mode', mode).then(mode => {
         // alert
