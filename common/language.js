@@ -72,11 +72,11 @@ const language_dict = {
         vi: "Tiết kiệm",
     },
     custom_new_tab_alert: {
-        zh: "https:// 或 http:// 开头的完整网址",
-        en: "The URL starting with https:// or http://",
-        jp: "https:// または http:// 先頭の完全なURLサイト",
-        de: "Vollständige URL, die mit https:// oder http:// beginnt",
-        vi: "https:// hoặc http:// địa chỉ URL đầy đủ bắt đầu",
+        zh: "https:// 或 http:// 开头的完整网址，如 https://datathink.top/purehome ",
+        en: "A fully qualified URL beginning with either \"https://\" or \"http://\", e.g., https://datathink.top/purehome ",
+        jp: "\"https://\" または \"http://\" で始まる完全修飾URL（FQDN付きURL）。例: https://datathink.top/purehome ",
+        de: "Eine vollqualifizierte URL, die mit \"https://\" oder \"http://\" beginnt, z. B. https://datathink.top/purehome ",
+        vi: "Một URL đầy đủ (fully qualified URL) bắt đầu bằng \"https://\" hoặc \"http://\", ví dụ: https://datathink.top/purehome ",
     },
     custom_new_tab_alert_yes: {
         zh: "✅ 已保存",
@@ -98,6 +98,13 @@ const language_dict = {
         jp: "✅ デフォルトの URL アドレスに設定されています",
         de: "✅ Als Standard-URL festgelegt",
         vi: "✅ Nó được đặt làm địa chỉ URL mặc định.",
+    },
+    custom_new_tab_alert_blank: {
+        zh: "✅ 填入空值时新标签页将为空",
+        en: "✅ Input empty value, the new tab page will be blank.",
+        jp: "✅ 値を空にすると、新しいタブページは空白になります。",
+        de: "✅ Wenn Sie den Wert leer lassen, wird die neue Registerkarte leer sein.",
+        vi: "✅ Nếu bạn để trống giá trị, trang tab mới sẽ trống.",
     },
     help_msg_browser_set_change: {
         zh: "💡 初次开启本扩展时，浏览器会提示“保持更改”，请点击同意更改。",

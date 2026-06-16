@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "tabPureHome",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "Customize the new tab URL in the browser and How links are opened in web pages. 自定义浏览器的新标签网址和在网页中打开链接的方式。",
   "permissions": [
     "storage"

@@ -1,18 +1,14 @@
 
 // 页面起始函数
 function page_start(e){
-    // 生成随机UID（注意，此值仅用于匿名调试）
-    // func.get_data("app_uid").then(uid => {
-    //     if (!uid){func.set_data("app_uid", func.make_app_uid()).then(res =>{}) ;}
-    // });
+    popup_init_data("page-popup");
+
     // 页面翻译
     func.set_language_title("popup");
     func.set_language_span();
     func.set_language_input_placeholder();
 
-    // 初始化
-    show_href();
-    save_href();
+    // 初始化1
     show_a_target_radio();
 
     //
