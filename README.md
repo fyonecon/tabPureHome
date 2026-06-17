@@ -8,7 +8,15 @@
 
 不收集任何隐私！
 
-项目地址：https://github.com/fyonecon/tabPureHome
+项目开源：https://github.com/fyonecon/tabPureHome
+
+---
+
+### 浏览器扩展商店安装扩展：
+
+Edge扩展：https://microsoftedge.microsoft.com/addons/detail/tabpurehome/lljgccnckkcbfmifknfmkigcigkbmenk
+
+Firefox扩展：https://addons.mozilla.org/zh-CN/firefox/addon/tabpurehome/
 
 ---
 
