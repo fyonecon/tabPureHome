@@ -94,7 +94,7 @@ Edge：
 ### Android 版 Firefox如何导入本地插件+调试插件：
 下载Firefox Nightly，安装好后：
 
-设置---关于Firefox---连续点击“Firefox Logo”，后自动打开开发者模式---返回到上一级（设置）---高级---从本地文件导入扩展（将.zip或.xpi文件提前放在你的安卓文件里面。注意，没有ID的插件无法被导入到安卓版，但桌面版可导入。）
+设置---关于Firefox---连续点击“Firefox Logo”，后自动打开开发者模式---返回到上一级（设置）---高级---从本地文件导入扩展（将.zip或.xpi文件提前放在你的安卓文件里面。注意，没有ID的插件无法被导入到安卓版，但桌面版可利用“about:debugging#/runtime/this-firefox”可导入。）
 
 ### 提交到浏览器应用商店：
 Edge:
