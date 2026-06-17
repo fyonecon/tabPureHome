@@ -44,6 +44,7 @@ tabPureHome
 │   ├───md5.js
 │   └───language.js 翻译对照表
 ├───content 注入或管理网页内容
+│   ├───common_popup_data.js 跨页面公共js
 │   └───dom_a_target.js 注入到每个网页内容的脚本
 ├───pages 具体页面
 │   ├───example 示例页面
@@ -74,7 +75,7 @@ Edge：
 
 ---
 
-### Edge 手动导入扩展：
+### Edge/Chrome 手动导入扩展：
 
 - 在浏览器打开网址：
   > edge://extensions/
@@ -89,6 +90,11 @@ Edge：
   > about:debugging#/runtime/this-firefox
 - 选择“加入临时扩展”，选中项目主文件夹中的“manifest.json”文件即可导入；
 - 注意，关闭Firefox后，浏览器会自动卸载这个扩展。
+
+### Android 版 Firefox如何导入本地插件+调试插件：
+下载Firefox Nightly，安装好后：
+
+设置---关于Firefox---连续点击“Firefox Logo”，后自动打开开发者模式---返回到上一级（设置）---高级---从本地文件导入扩展（将.zip或.xpi文件提前放在你的安卓文件里面。注意，没有ID的插件无法被导入到安卓版，但桌面版可导入。）
 
 ### 提交到浏览器应用商店：
 Edge:
