@@ -149,11 +149,11 @@ const language_dict = {
         vi: "✅ Đã cài đặt. Bạn có thể bật nó bằng cách làm mới trang nhãn của bạn thủ công",
     },
     help_msg_browser_set_a_target: {
-        zh: "💡 修改页面所有 <a> 链接的 target 属性，对 JS 点击属性无效。",
-        en: "💡 Modify the target attribute of all<a>links on the page, which is invalid for JS click attributes.",
-        jp: "💡 ページのすべての＜a＞リンクのtarget属性を修正して、JSクリック属性に対して無効です。",
-        de: "💡 Ändern Sie das target-Attribut für alle <a>-Links auf der Seite, so dass das JS-Klick-Attribut ungültig ist.",
-        vi: "💡 Sửa đổi thuộc tính target của tất cả các liên kết<a>trên trang, không hợp lệ với thuộc tính JS Click.",
+        zh: "💡 修改页面所有 <a> 链接的 target 属性；对 JS 点击属性无效。",
+        en: "💡 Modify the target attribute of all<a>links on the page; Which is invalid for JS click attributes.",
+        jp: "💡 ページのすべての＜a＞リンクのtarget属性を修正して；JSクリック属性に対して無効です。",
+        de: "💡 Ändern Sie das target-Attribut für alle <a>-Links auf der Seite;; So dass das JS-Klick-Attribut ungültig ist.",
+        vi: "💡 Sửa đổi thuộc tính target của tất cả các liên kết<a>trên trang; Không hợp lệ với thuộc tính JS Click.",
     },
 
 };
