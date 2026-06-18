@@ -72,11 +72,11 @@ const language_dict = {
         vi: "Tiết kiệm",
     },
     custom_new_tab_alert: {
-        zh: "https:// 或 http:// 开头的完整网址，如 https://datathink.top/purehome ",
-        en: "A fully qualified URL beginning with either \"https://\" or \"http://\", e.g., https://datathink.top/purehome ",
-        jp: "\"https://\" または \"http://\" で始まる完全修飾URL（FQDN付きURL）。例: https://datathink.top/purehome ",
-        de: "Eine vollqualifizierte URL, die mit \"https://\" oder \"http://\" beginnt, z. B. https://datathink.top/purehome ",
-        vi: "Một URL đầy đủ (fully qualified URL) bắt đầu bằng \"https://\" hoặc \"http://\", ví dụ: https://datathink.top/purehome ",
+        zh: "https:// 或 http:// 开头的完整网址，如 ",
+        en: "A fully qualified URL beginning with either \"https://\" or \"http://\", e.g., ",
+        jp: "\"https://\" または \"http://\" で始まる完全修飾URL（FQDN付きURL）。例: ",
+        de: "Eine vollqualifizierte URL, die mit \"https://\" oder \"http://\" beginnt, z. B. ",
+        vi: "Một URL đầy đủ (fully qualified URL) bắt đầu bằng \"https://\" hoặc \"http://\", ví dụ: ",
     },
     custom_new_tab_alert_yes: {
         zh: "✅ 已保存",
