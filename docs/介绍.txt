@@ -7,8 +7,6 @@ Customize the new tab URL in the browser and How links are opened in web pages.
 No personal data is collected!
 不收集任何隐私！
 
----
-
 ### Running 运行:
 - Adapts to the browser's automatic theme: light/dark mode;
 - 适配了浏览器自动显示：亮/暗主题；
