@@ -45,3 +45,50 @@ Replace your new tab URL (specifically: obtain your new tab address and only rep
 
 ====================================
 
+给审核员或测试看的备注：
+
+
+🎯功能1：在新标签打开已设置的网址：
+填入默认网址 https://datathink.top/purehome 或者使用默认网址，在浏览器打开新标签即可完成本功能的运行。
+
+
+🎯功能2：自定义某网页中打开新链接的方式：
+测试网站 https://www.sohu.com 。此网站是<a>标签点击版的，本扩展适配了如下特性：
+2.1 勾选在“默认方式”，然后重新打开或刷新测试网站，此网站的所有链接的点击后的打开方式都是此网站默认的。
+2.2 勾选在“新标签”打开，然后重新打开或刷新测试网站，随便点击一个链接即可展示本功能的效果（在新标签打开了你所点击的链接）。
+2.3 勾选在“当前页面”打开，然后重新打开或刷新测试网站，随便点击一个链接即可展示本功能的效果（在当前页面打开了你所点击的链接，点击浏览器Back导航按钮会返回上一级页面）。
+
+测试网站 https://datathink.top/purehome/link 。这个网站是js点击版的，本扩展不做适配（扩展提示里面已说明对纯js点击无效果）。
+
+
+🎯功能3：自动翻译成中文、英文、德语：
+更换浏览器语言或者网页语言，重新点击本扩展的Logo就可以自动展示适配的新语言。
+
+
+🎯功能4: 自动亮/暗主题：
+切换浏览器的亮/暗主题，本扩展会自动适配显示亮/暗主题效果。
+
+
+
+--------
+
+🎯Function 1: Open a preset URL in a new tab:
+Enter the Default URL https://datathink.top/purehome or use the default URL, and open a new tab in the browser to execute this function.
+
+
+🎯Function 2: Customize how links are opened on a specific webpage:
+Test website: https://www.sohu.com . This website uses a click-based `<a>` tag version, and this extension supports the following features:
+2.1 Select "Default method" then reopen or refresh the test website. All links on this site will open in the default manner of the site.
+2.2 Select "New Tab" then reopen or refresh the test website. Click any link to see the effect of this function (the link you clicked will open in a new tab).
+2.3 Select "Current page" then reopen or refresh the test website. Click any link to see the effect of this function (the link you clicked will open in the current page, and clicking the browser's Back button will return to the previous page).
+
+Test website: https://datathink.top/purehome/link .  This website uses a JavaScript click-based version, and this extension does not support it (the extension prompt already states that it has no effect on pure JavaScript clicks).
+
+
+🎯Function 3: Automatically translate into Chinese, English, and German:
+Change the browser language or the webpage language, then click the extension's logo again to automatically display the newly adapted language.
+
+
+🎯Function 4: Automatic light/dark theme:
+Switch the browser's light/dark theme, and this extension will automatically adapt to display the corresponding light or dark theme effect.
+

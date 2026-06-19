@@ -2,7 +2,7 @@
 
 支持浏览器：Edge、Firefox
 
-支持的语言（自动）：中文、英语、德语、日文、越语
+支持的语言（自动）：中文、英语、德语、日文
 
 支持主题（自动）：明/暗
 
@@ -12,11 +12,13 @@
 
 ---
 
-### 浏览器扩展商店安装扩展：
+[//]: # (### 浏览器扩展商店安装扩展：)
 
-Edge扩展：https://microsoftedge.microsoft.com/addons/detail/tabpurehome/lljgccnckkcbfmifknfmkigcigkbmenk
+[//]: # ()
+[//]: # (Edge扩展：https://microsoftedge.microsoft.com/addons/detail/tabpurehome/lljgccnckkcbfmifknfmkigcigkbmenk)
 
-Firefox扩展：https://addons.mozilla.org/zh-CN/firefox/addon/tabpurehome/
+[//]: # ()
+[//]: # (Firefox扩展：https://addons.mozilla.org/zh-CN/firefox/addon/tabpurehome/)
 
 ---
 
