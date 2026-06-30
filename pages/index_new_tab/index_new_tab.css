@@ -4,3 +4,21 @@
     line-height: 18px !important;
     padding: 15px 10px;
 }
+
+.app-iframe{
+    width: 100%;
+    max-width: 10240px;
+    min-width: 200px;
+    height: 100%;
+    max-height: 10240px;
+    min-height: 200px;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    position: fixed;
+    z-index: 2;
+    background-color: rgba(160,160,160,0.1);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
