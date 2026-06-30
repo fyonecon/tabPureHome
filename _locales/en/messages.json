@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "tabPureHome"
+  },
+  "extensionDescription": {
+    "message": "Customize the new tab URL in the browser and how links are opened in web pages."
+  }
+}
