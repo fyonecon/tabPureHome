@@ -104,7 +104,7 @@ function page_start(e){
         if (document.hidden) { // onHide
             //
         } else { // onShow
-            page_start(3);
+            // page_start(3);
         }
     });
 })();
