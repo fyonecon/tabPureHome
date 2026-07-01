@@ -68,7 +68,7 @@ function task_new_tab(){
         click_open_href(href);
 
         // 处理默认链接
-        if(href === config.default_new_tab_href){
+        if(href === config.default_new_tab_href || href.indexOf(config.app_class.toLowerCase())>-1 ){
             // 用iframe的方式打开白名单链接
             iframe_open_default_url(href);
         }else{
