@@ -14,28 +14,28 @@ function click_open_href(href){
 // 用iframe打开白名单链接
 function iframe_open_default_url(href= config.default_new_tab_href){
     index_new_tab_iframe.setAttribute("data-src", href);
-    index_new_tab_iframe.src = href; // href http://localhost:9970/ https://youtube.com
+    index_new_tab_iframe.src = href;
     document.title = config.app_name;
 
-    // 失败时就直接window.open页面，解决iframe无onerror函数的问题
+    // 失败时就直接window.open页面。解决iframe无onerror函数的问题。
     iframe_onerror_timer = setTimeout(()=>{
-        console.log("error", index_new_tab_iframe.src);
         clearTimeout(nav_info_timer);
         index_new_tab_msg.innerText = "Error ⚠️ " + href;
+        // 自动更换方式打开页面
         div_index_new_tab.classList.remove("hide");
         index_new_tab_iframe.classList.add("hide");
-        // 自动打开页面
         func.goto_href(href, "_replace");
-    }, 8*1000); // 默认8s
+    }, 8*1000); // 默认[6, 15]s
 
-    // 成功就直接iframe页面
+    // 网址成功或有状态返回就直接iframe页面。iframe的onload事件包括onload和onerror。
     index_new_tab_iframe.onload = (e) => {
         clearTimeout(nav_info_timer);
         clearTimeout(iframe_onerror_timer);
-        // 成功
+        // 成功或有状态返回
         div_index_new_tab.classList.add("hide");
         index_new_tab_iframe.classList.remove("hide");
     };
+
 }
 
 //
@@ -52,7 +52,9 @@ function task_new_tab(){
             msg = "Error Opening 👉 " + href;
         }
 
+        // init 定时器
         clearTimeout(nav_info_timer);
+        clearTimeout(iframe_onerror_timer);
 
         // 提示信息
         document.title = msg;
@@ -60,7 +62,7 @@ function task_new_tab(){
         nav_info_timer = setTimeout(()=>{
             div_index_new_tab.classList.remove("hide");
             index_new_tab_iframe.classList.add("hide");
-        }, 2000);
+        }, 2*1000); // 默认[1, 4]s
 
         // 页面故障时，可以手动打开页面
         click_open_href(href);
@@ -84,10 +86,10 @@ function page_start(e){
     // 页面翻译
     func.set_language_title("index_new_tab");
     func.set_language_span();
+
     // 执行跳转
     task_new_tab();
 
-    // 其他
 }
 
 // 页面加载完成后或页面可见时
