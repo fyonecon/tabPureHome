@@ -1,6 +1,6 @@
 
 // 跨页面公共参数生成
-function popup_init_data(where="page-popup"){
+function page_init_data(where="page-popup"){
     let p1 = new Promise(resolve => {
         func.get_data("app_uid").then(uid => {
             resolve(uid);

@@ -90,7 +90,7 @@ function task_new_tab(){
 
 // 页面起始函数
 function page_start(e){
-    popup_init_data("page-index_new_tab");
+    page_init_data("page-index_new_tab");
 
     // 页面翻译
     func.set_language_title("index_new_tab");

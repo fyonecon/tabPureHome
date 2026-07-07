@@ -1,7 +1,7 @@
 
 // 页面起始函数
 function page_start(e){
-    popup_init_data("page-popup");
+    page_init_data("page-popup");
 
     // 页面翻译
     func.set_language_title("popup");
