@@ -42,6 +42,27 @@ const language_dict = {
         de: "tabPureHome",
         vi: "tabPureHome",
     },
+    app_name_iframe: {
+        zh: "新标签",
+        en: "New Tab",
+        jp: "新規タブ",
+        de: "Neuer Tab",
+        vi: "Tab mới",
+    },
+    help: {
+        zh: "帮助",
+        en: "Help",
+        jp: "ヘルプ",
+        de: "Hilfe",
+        vi: "Trợ giúp",
+    },
+    about: {
+        zh: "关于",
+        en: "About",
+        jp: "当ソフトについて",
+        de: "Über",
+        vi: "Giới thiệu",
+    },
     //
     opening: {
         zh: "正在打开",

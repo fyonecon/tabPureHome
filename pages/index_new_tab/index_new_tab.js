@@ -15,7 +15,6 @@ function click_open_href(href){
 function iframe_open_default_url(href= config.default_new_tab_href){
     index_new_tab_iframe.setAttribute("data-src", href);
     index_new_tab_iframe.src = href;
-    document.title = config.app_name;
 
     // 失败时就直接window.open页面。解决iframe无onerror函数的问题。
     iframe_onerror_timer = setTimeout(()=>{
@@ -34,6 +33,8 @@ function iframe_open_default_url(href= config.default_new_tab_href){
         // 成功或有状态返回
         div_index_new_tab.classList.add("hide");
         index_new_tab_iframe.classList.remove("hide");
+        //
+        document.title = func.get_language("app_name_iframe");
     };
 
 }
@@ -57,7 +58,6 @@ function task_new_tab(){
         clearTimeout(iframe_onerror_timer);
 
         // 提示信息
-        document.title = msg;
         index_new_tab_msg.innerText = msg;
         nav_info_timer = setTimeout(()=>{
             div_index_new_tab.classList.remove("hide");
@@ -68,10 +68,19 @@ function task_new_tab(){
         click_open_href(href);
 
         // 处理默认链接
-        if(href === config.default_new_tab_href || href.indexOf(config.app_class.toLowerCase())>-1 ){
-            // 用iframe的方式打开白名单链接
+        if( (href === config.default_new_tab_href || href.indexOf(config.app_class.toLowerCase())>-1 ) && func.support_min_js() ){ // 白名单链接或默认链接，同时确保功能在最小ES支持下可以正常运行
+            document.title = func.get_language("app_name") + " ... ";
+            // 此标记仅用于反爬虫识别链接，不用于统计用户数据
+            let browser_name = func.get_runtime_info()["browser_name"];
+            if(href.indexOf("?")>-1){
+                href = href+"&ap="+func.md5(func.string_to_unicode(("tph_iframe_"+browser_name+"_"+config.app_version)).toLowerCase());
+            }else{
+                href = href+"?ap="+func.md5(func.string_to_unicode(("tph_iframe_"+browser_name+"_"+config.app_version).toLowerCase()));
+            }
+            // 用iframe的方式打开
             iframe_open_default_url(href);
-        }else{
+        }else{ // 用户自定义的链接
+            document.title = msg;
             // 自动打开页面
             func.goto_href(href, "_replace");
         }

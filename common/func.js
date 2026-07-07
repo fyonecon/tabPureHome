@@ -19,13 +19,28 @@ const func = {
         key = config.app_class + key;
         return new Promise((resolve)=>{
             if (typeof chrome !== 'undefined'){
-                chrome.storage.local.get([key], (res) => {
-                    if (res[key] !== undefined) {
-                        resolve(res[key]);
-                    } else {
-                        resolve("");
-                    }
-                });
+                const storage_type = config.storage_type;
+                if (storage_type === "local"){
+                    // 本地数据
+                    chrome.storage.local.get([key], (res) => {
+                        if (res[key] !== undefined) {
+                            resolve(res[key]);
+                        } else {
+                            resolve("");
+                        }
+                    });
+                }else if(storage_type === "sync"){
+                    // 与用户浏览器同步的云数据
+                    chrome.storage.sync.get([key], (res) => {
+                        if (res[key] !== undefined) {
+                            resolve(res[key]);
+                        } else {
+                            resolve("");
+                        }
+                    });
+                }else{
+                    console.error("未指定正确的值：", storage_type);
+                }
             }else{
                 resolve("");
             }
@@ -35,9 +50,28 @@ const func = {
         key = config.app_class + key;
         return new Promise((resolve)=>{
             if (typeof chrome !== 'undefined'){
-                chrome.storage.local.set({ [key]: value }, () => {
-                    resolve(value);
-                });
+                const storage_type = config.storage_type;
+                if (storage_type === "local"){
+                    // 本地数据
+                    chrome.storage.local.set({ [key]: value }, () => {
+                        if (chrome.runtime.lastError) {
+                            resolve("");
+                        } else {
+                            resolve(value);
+                        }
+                    });
+                }else if(storage_type === "sync"){
+                    // 与用户浏览器同步的云数据
+                    chrome.storage.sync.set({ [key]: value }, () => {
+                        if (chrome.runtime.lastError) {
+                            resolve("");
+                        } else {
+                            resolve(value);
+                        }
+                    });
+                }else{
+                    console.error("未指定正确的值：", storage_type);
+                }
             }else{
                 resolve("");
             }
@@ -47,9 +81,20 @@ const func = {
         key = config.app_class + key;
         return new Promise((resolve)=>{
             if (typeof chrome !== 'undefined'){
-                chrome.storage.local.remove([key], () => {
-                    resolve(true);
-                });
+                const storage_type = config.storage_type;
+                if (storage_type === "local"){
+                    // 本地数据
+                    chrome.storage.local.remove(key, () => {
+                        resolve(true);
+                    });
+                }else if(storage_type === "sync"){
+                    // 与用户浏览器同步的云数据
+                    chrome.storage.sync.remove(key, () => {
+                        resolve(true);
+                    });
+                }else{
+                    console.error("未指定正确的值：", storage_type);
+                }
             }else{
                 resolve(false);
             }
@@ -58,9 +103,20 @@ const func = {
     clear_data: function() { // 清空数据
         return new Promise((resolve)=>{
             if (typeof chrome !== 'undefined'){
-                chrome.storage.local.clear(() => {
-                    resolve(true);
-                });
+                const storage_type = config.storage_type;
+                if (storage_type === "local"){
+                    // 本地数据
+                    chrome.storage.local.clear(() => {
+                        resolve(true);
+                    });
+                }else if(storage_type === "sync"){
+                    // 与用户浏览器同步的云数据
+                    chrome.storage.sync.clear(() => {
+                        resolve(true);
+                    });
+                }else{
+                    console.error("未指定正确的值：", storage_type);
+                }
             }else{
                 resolve(false);
             }
@@ -510,7 +566,7 @@ const func = {
 
         return agent_state || js_runtime_state;
     },
-    get_runtime_info: function() {
+    get_runtime_info: function() { // 设备及浏览器类型
         let that = this;
         //
         return {
@@ -518,7 +574,36 @@ const func = {
             "browser_name": that.is_firefox() ? "Firefox" : (that.is_edge() ? "Edge" : (that.is_chrome() ? "Chrome" : (that.is_brave() ? "Brave" : (that.is_samsung()?"Samsung":(that.is_safari()?"Safari":"Others"))))),
         };
     },
-    ping: function (url) {
+    support_min_js: function (){ // 最低js支持到ES202x
+        // 大致最低支持范围:
+        // ES2024，Chrome124+，Firefox128+，iOS17.4+，Android16+，MacOS14+，Win10 2024 Update+，nodeJS22+，Bun1.1+
+        let that = this;
+        const support_es2024 = function (){
+            try { // es2024
+                return !!(
+                    // 1. Object.groupBy (最常用的新特性)
+                    Object.groupBy &&
+                    // 2. Promise.withResolvers (改变 Promise 写法的特性)
+                    Promise.withResolvers &&
+                    // 3. ArrayBuffer.prototype.resize (内存管理增强)
+                    ArrayBuffer.prototype.resize &&
+                    // 4. 正则表达式 v 标记 (Unicode 增强)
+                    new RegExp('', 'v') &&
+                    // 5. Atomics.waitAsync (多线程同步增强)
+                    typeof Atomics !== 'undefined' && Atomics.waitAsync
+                );
+            } catch (e) {
+                return false;
+            }
+        };
+        //
+        if (!support_es2024()){
+            console.error("support_min_js=", ["es2024", support_es2024()]);
+        }
+        //
+        return support_es2024();
+    },
+    ping: function (url) { // Ping网址是否可访问
         let that = this;
         //
         /**
