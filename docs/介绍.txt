@@ -45,6 +45,13 @@ Replace your new tab URL (specifically: obtain your new tab address and only rep
 
 ====================================
 
+本次：
+新增了用户配置信息的数据可以同步到用户浏览器登录账户的功能；
+新增了“Help”页面（在popup页面的最下面）；
+优化了浏览器标签的title显示。
+
+------
+
 本次版本给本浏览器扩展增加了“用iframe打开默认网址‘https://datathink.top/purehome’以让浏览器的地址栏显示为空的效果。如果默认网址网速慢或者打不开，则使用跳转方式打开默认网址。”
 
 ------
@@ -75,6 +82,13 @@ Replace your new tab URL (specifically: obtain your new tab address and only rep
 
 
 --------
+
+This release version:
+- Added functionality to sync user configuration data to the browser's signed-in user account;
+- Added a "Help" page (positioned at the bottom of the popup page);
+- Optimized the display of browser tab titles.
+
+------
 
 This version adds the ability to open the default URL 'https://datathink.top/purehome' in an iframe to the browser extension, so that the browser's address bar appears blank. If the default URL has slow network response or fails to load, the extension will fall back to opening the default URL via a redirect navigation.
 

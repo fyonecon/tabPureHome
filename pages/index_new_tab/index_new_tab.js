@@ -73,9 +73,9 @@ function task_new_tab(){
             // 此标记仅用于反爬虫识别链接，不用于统计用户数据
             let browser_name = func.get_runtime_info()["browser_name"];
             if(href.indexOf("?")>-1){
-                href = href+"&ap="+func.md5(func.string_to_unicode(("tph_iframe_"+browser_name+"_"+config.app_version)).toLowerCase());
+                href = href+"&ap="+func.md5(func.string_to_unicode(("tph_iframe_custom_"+browser_name+"_"+config.app_version)).toLowerCase());
             }else{
-                href = href+"?ap="+func.md5(func.string_to_unicode(("tph_iframe_"+browser_name+"_"+config.app_version).toLowerCase()));
+                href = href+"?ap="+func.md5(func.string_to_unicode(("tph_iframe_default_"+browser_name+"_"+config.app_version).toLowerCase()));
             }
             // 用iframe的方式打开
             iframe_open_default_url(href);
