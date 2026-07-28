@@ -17,13 +17,11 @@ function show_insert_css_font_radio() {
         } else { // _default or ""
             modeFontDefault.checked = true;
         }
-        console.log("show=", mode);
     });
 }
 
 // 保存模式数据
 function set_insert_css_font_radio_mode(mode) {
-    console.log("set=", mode);
     clearTimeout(custom_insert_css_font_alert_timer);
     func.set_data('custom_insert_css_font_mode', mode).then(mode => {
         // alert

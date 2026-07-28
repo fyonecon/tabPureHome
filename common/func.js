@@ -160,7 +160,7 @@ const func = {
                 return "en";
             }
             else if (_language.indexOf("jp") >= 0 || _language.indexOf("ja") >= 0){ // 日文
-                return "jp";
+                return "ja";
             }
             // else if (_language.indexOf("fr") >= 0){ // 法语
             //     return "fr";
