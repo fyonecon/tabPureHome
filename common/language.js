@@ -205,9 +205,9 @@ const language_dict = {
         vi: "Đã áp dụng. Làm mới trang thủ công để xem hiệu quả",
     },
     custom_insert_css_font_help: {
-        zh: "💡 默认使用思源黑体（可免费商用版权字体），对中文、日文等字体的效果很明显，对Win11+系统的显示效果很明显。",
+        zh: "💡 默认使用思源黑体（可免费商用版权字体，Noto Sans），对中文、日文等字体的效果很明显，对Win11+系统的显示效果很明显。",
         en: "💡 Default uses Noto Sans (free for commercial use), with noticeable effect on CJK (Chinese, Japanese) fonts, and significant improvement on Win11+ systems.",
-        ja: "💡 デフォルトは源ノ角ゴシック（商用利用無料）を使用し、中国語・日本語などのCJKフォントで効果が顕著で、Win11+システムでも表示が大幅に改善されます。",
+        ja: "💡 デフォルトは源ノ角ゴシック（商用利用無料，Noto Sans）を使用し、中国語・日本語などのCJKフォントで効果が顕著で、Win11+システムでも表示が大幅に改善されます。",
         de: "💡 Standardmäßig wird Noto Sans verwendet (kostenlos für kommerzielle Nutzung), mit deutlicher Wirkung auf CJK-Schriftarten (Chinesisch, Japanisch) und signifikanter Verbesserung der Darstellung auf Win11+-Systemen.",
         vi: "💡 Mặc định sử dụng Noto Sans (phông chữ miễn phí cho mục đích thương mại), hiệu quả rõ rệt với phông chữ CJK (Trung, Nhật, Hàn) và cải thiện đáng kể hiển thị trên hệ thống Win11+.",
     },
