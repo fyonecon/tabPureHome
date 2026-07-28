@@ -5,7 +5,8 @@
 }
 
 body, html {
-    font-family: "Noto Sans Light", sans-serif;
+    font-family: "Noto Sans SC", Roboto, "PingFang SC", "Arial", sans-serif;
+    font-size: 15px;
 }
 
 /*  */
