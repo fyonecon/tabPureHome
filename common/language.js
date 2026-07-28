@@ -163,11 +163,11 @@ const language_dict = {
         vi: "Tab mới (_blank)",
     },
     custom_a_target_alert: {
-        zh: "✅ 已设置。手动刷新你的标签网页可启用",
-        en: "✅ Already set. Manually refreshing your tagged webpage can be enabled",
-        jp: "✅ 設定済み。タグページの手動更新で有効化できます",
-        de: "✅ Einrichtet. Die manuelle Aktualisierung Ihrer Tab-Seite ist aktiviert",
-        vi: "✅ Đã cài đặt. Bạn có thể bật nó bằng cách làm mới trang nhãn của bạn thủ công",
+        zh: "✅ 已设置。手动刷新你的标签网页可启用。",
+        en: "✅ Already set. Manually refreshing your tagged webpage can be enabled.",
+        jp: "✅ 設定済み。タグページの手動更新で有効化できます。",
+        de: "✅ Einrichtet. Die manuelle Aktualisierung Ihrer Tab-Seite ist aktiviert.",
+        vi: "✅ Đã cài đặt. Bạn có thể bật nó bằng cách làm mới trang nhãn của bạn thủ công.",
     },
     help_msg_browser_set_a_target: {
         zh: "💡 修改页面所有 <a> 链接的 target 属性；对 JS 点击属性无效。",
@@ -198,11 +198,11 @@ const language_dict = {
         vi: "Ghi đè phông chữ",
     },
     custom_insert_css_font_alert: {
-        zh: "已设置。手动刷新页面以查看效果",
-        en: "Applied. Manually refresh the page to see the effect",
-        ja: "設定済み。手動でページを更新して効果を確認してください",
-        de: "Angewendet. Bitte aktualisieren Sie die Seite manuell, um den Effekt zu sehen",
-        vi: "Đã áp dụng. Làm mới trang thủ công để xem hiệu quả",
+        zh: "✅ 已设置。手动刷新页面以查看效果。",
+        en: "✅ Applied. Manually refresh the page to see the effect.",
+        ja: "✅ 設定済み。手動でページを更新して効果を確認してください。",
+        de: "✅ Angewendet. Bitte aktualisieren Sie die Seite manuell, um den Effekt zu sehen.",
+        vi: "✅ Đã áp dụng. Làm mới trang thủ công để xem hiệu quả.",
     },
     custom_insert_css_font_help: {
         zh: "💡 默认使用思源黑体（可免费商用版权字体，Noto Sans），对中文、日文等字体的效果很明显，对Win11+系统的显示效果很明显。",

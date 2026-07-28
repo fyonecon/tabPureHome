@@ -30,7 +30,7 @@ function set_insert_css_font_radio_mode(mode) {
         custom_insert_css_font_alert.classList.remove('font-gray');
         custom_insert_css_font_alert.classList.add('font-blue');
         //
-        custom_insert_css_font_alert.innerText = func.get_language("custom_insert_css_font_alert") + ": " + mode.toUpperCase();
+        custom_insert_css_font_alert.innerText = func.get_language("custom_insert_css_font_alert") + " [" + mode.toUpperCase() + "]";
         radioAlert2.classList.remove("hide");
         custom_insert_css_font_alert_timer = setInterval(() => {
             custom_insert_css_font_alert.classList.remove('font-blue');
