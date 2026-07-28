@@ -1,11 +1,12 @@
 {
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "__MSG_extensionDescription__",
   "default_locale": "en",
   "permissions": [
-    "storage"
+    "storage",
+    "scripting"
   ],
   "chrome_url_overrides": {
     "newtab": "./pages/index_new_tab/index_new_tab.html"
@@ -19,7 +20,7 @@
       "matches": ["http://*/*", "https://*/*"],
       "js": [
         "./common/config.js", "./common/language.js", "./common/md5.js", "./common/func.js",
-        "./content/dom_a_target.js"
+        "./content/dom_a_target.js", "./content/dom_insert_css.js"
       ],
       "run_at": "document_end"
     }

@@ -176,5 +176,40 @@ const language_dict = {
         de: "💡 Ändern Sie das target-Attribut für alle <a>-Links auf der Seite;; So dass das JS-Klick-Attribut ungültig ist.",
         vi: "💡 Sửa đổi thuộc tính target của tất cả các liên kết<a>trên trang; Không hợp lệ với thuộc tính JS Click.",
     },
+    custom_insert_css_font: {
+        zh: "覆盖页面的字体让页面更易阅读",
+        en: "Override page fonts to improve readability",
+        ja: "ページのフォントを上書きして読みやすくします",
+        de: "Überschreiben Sie die Seitenschriftarten für bessere Lesbarkeit",
+        vi: "Ghi đè phông chữ trang để cải thiện khả năng đọc",
+    },
+    custom_insert_css_font_default: {
+        zh: "默认不覆盖",
+        en: "Default (no override)",
+        ja: "デフォルト（上書きしない）",
+        de: "Standard (keine Überschreibung)",
+        vi: "Mặc định (không ghi đè)",
+    },
+    custom_insert_css_font_replace: {
+        zh: "覆盖字体",
+        en: "Override fonts",
+        ja: "フォントを上書きする",
+        de: "Schriftarten überschreiben",
+        vi: "Ghi đè phông chữ",
+    },
+    custom_insert_css_font_alert: {
+        zh: "已设置。手动刷新页面以查看效果",
+        en: "Applied. Manually refresh the page to see the effect",
+        ja: "設定済み。手動でページを更新して効果を確認してください",
+        de: "Angewendet. Bitte aktualisieren Sie die Seite manuell, um den Effekt zu sehen",
+        vi: "Đã áp dụng. Làm mới trang thủ công để xem hiệu quả",
+    },
+    custom_insert_css_font_help: {
+        zh: "💡 默认使用思源黑体（可免费商用版权字体），对中文、日文等字体效果很明显。",
+        en: "💡 Default uses Noto Sans (free for commercial use), with noticeable effect on CJK (Chinese, Japanese) fonts.",
+        ja: "💡 デフォルトは源ノ角ゴシック（商用利用無料）を使用し、中国語、日本語などのCJKフォントで効果が顕著です。",
+        de: "💡 Standardmäßig wird Noto Sans verwendet (kostenlos für kommerzielle Nutzung), mit deutlicher Wirkung auf CJK-Schriftarten (Chinesisch, Japanisch).",
+        vi: "💡 Mặc định sử dụng Noto Sans (phông chữ miễn phí cho mục đích thương mại), hiệu quả rõ rệt với phông chữ CJK (Trung, Nhật).",
+    },
 
 };

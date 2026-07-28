@@ -10,6 +10,7 @@ function page_start(e){
 
     // 初始化1
     show_a_target_radio();
+    show_insert_css_font_radio();
 
     //
     // let sys_platform = func.get_runtime_info()["sys_platform"];
