@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "tabPureHome"
+  },
+  "extensionDescription": {
+    "message": "Konfiguration der benutzerdefinierten New-Tab-URL im Browser und des Verhaltens beim Öffnen von Links innerhalb von Webseiten."
+  }
+}

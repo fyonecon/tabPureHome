@@ -46,6 +46,12 @@ Replace your new tab URL (specifically: obtain your new tab address and only rep
 ====================================
 
 本次版本：
+- 新增了“覆盖网页页面字体的功能”（位于popup页面的最下面区块），可以使用测试网站“https://finance.sina.com.cn”来查看页面字体效果；
+- 优化了iframe外部页面字体设置影响内部页面字体的问题。
+
+------
+
+本次版本：
 新增了用户配置信息的数据可以同步到用户浏览器登录账户的功能（使用了sync函数）；
 新增了“Help”页面（在popup页面的最下面）；
 优化了浏览器标签的title显示。

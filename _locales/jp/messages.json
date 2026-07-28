@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "tabPureHome"
+  },
+  "extensionDescription": {
+    "message": "カスタムブラウザにおける新規タブのURL指定と、Webページ内リンクの開き方の設定。."
+  }
+}
